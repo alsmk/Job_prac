@@ -35,7 +35,7 @@ class TestFetchCommitInfo(unittest.TestCase):
         latest_commit = commits[0]
         
         # self.assertEqual(latest_commit['sha'], "d535302")
-        self.assertEqual(latest_commit['commit']['author']['name'], "Al hel md. shahriar zaman")
+        self.assertEqual(latest_commit['commit']['author']['name'], "alsmk")
         # self.assertEqual(latest_commit['commit']['author']['date'], "2024-09-27T12:46:50Z")
 
 if __name__ == '__main__':
