@@ -9,7 +9,6 @@ REPO = os.getenv('GITHUB_REPOSITORY')
 TOKEN = os.getenv('TOKEN')
 
 
-
 def fetch_commit_info():
     """fetching commits information from github.com"""
     headers = {
