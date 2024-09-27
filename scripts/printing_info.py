@@ -4,18 +4,18 @@ import requests
 
 
 
-REPO = "Job_prac"
-token = os.getenv("TOKEN")
-OWNER = 'alsmk'
+API_URL = "https://api.github.com"
+REPO = os.getenv('GITHUB_REPOSITORY')  
+TOKEN = os.getenv('GITHUB_TOKEN')
 
 
 
 def fetch_commit_info():
     """fetching commits information from github.com"""
     headers = {
-        'Authorization': f'token {token}'
+        'Authorization': f'token {TOKEN}'
     }
-    url = f'https://api.github.com/repos/{OWNER}/{REPO}/commits/'
+    url = f"{API_URL}/repos/{REPO}/commits"
     response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
