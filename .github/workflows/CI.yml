@@ -55,4 +55,5 @@ jobs:
             - name: run printing_info
               run: |
                python ./scripts/printing_info.py
-
+              env:
+               TOKEN: ${{ secrets.TOKEN }}
