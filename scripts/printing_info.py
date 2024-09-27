@@ -22,7 +22,7 @@ def fetch_commit_info():
 
 
 def print_commit_info():
-    """This module fetches and prints information from a GitHub repository's  commits."""
+    """This module fetches and prints information from a GitHub repository's  commits"""
     commit_info = fetch_commit_info()
     for commit in commit_info:
         print(f'Commit: {commit["sha"][:7]}')
