@@ -1,5 +1,6 @@
-import requests
 import os
+import requests
+
 
 
 REPO = "JobPrac"
@@ -10,7 +11,7 @@ def fetch_commit_info():
         'Authorization': f'token {token}'
     }
     response = requests.get(f'https://api.github.com/repos/{OWNER}/{REPO}/commits/main', 
-                            headers=headers)
+                            headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
 
