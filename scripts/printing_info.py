@@ -4,7 +4,7 @@ import requests
 
 
 
-REPO = "JobPrac"
+REPO = "Job_prac"
 token = os.getenv("TOKEN")
 OWNER = 'alsmk'
 
