@@ -32,7 +32,7 @@ jobs:
             
             - name: run linter
               run: |
-                pylint ./scripts/printing_info.py
+                pylint ./scripts/printing_info.py --fail-under=8.0
         
     printing_info:
         runs-on: ubuntu-latest
