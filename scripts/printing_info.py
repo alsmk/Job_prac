@@ -15,7 +15,7 @@ def fetch_commit_info():
     headers = {
         'Authorization': f'token {token}'
     }
-    url = f'https://api.github.com/repos/{OWNER}/{REPO}/commits/main'
+    url = f'https://api.github.com/repos/{REPO}/commits/'
     response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
