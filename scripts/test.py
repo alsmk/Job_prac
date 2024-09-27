@@ -1,9 +1,13 @@
+import os 
+import sys
 import unittest
 from unittest.mock import patch
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   
 from scripts.printing_info import fetch_commit_info
 
 class TestFetchCommitInfo(unittest.TestCase):   
-    @patch('scripts.printing_info.request.get')
+    @patch('scripts.printing_info.fetch_commit_info')
     def test_fetch_commit_info(self, mock_get):
         mock_response = [
             {
