@@ -9,7 +9,7 @@ def fetch_commit_info():
     headers = {
         'Authorization': f'token {token}'
     }
-    response = requests.get(f'https://api.github.com/repos/{owner}/{repo}/commits', headers=headers)
+    response = requests.get(f'https://api.github.com/repos/{owner}/{repo}/commits/main', headers=headers)
     response.raise_for_status()
     return response.json()
 
