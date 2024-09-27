@@ -1,3 +1,4 @@
+"""information about repo with api"""
 import os
 import requests
 
@@ -6,12 +7,17 @@ import requests
 REPO = "JobPrac"
 token = os.getenv("TOKEN")
 OWNER = 'alsmk'
+
+
+"""
+fetching commits information from github.com
+"""
 def fetch_commit_info():
     headers = {
         'Authorization': f'token {token}'
     }
-    response = requests.get(f'https://api.github.com/repos/{OWNER}/{REPO}/commits/main', 
-                            headers=headers, timeout=10)
+    url = f'https://api.github.com/repos/{OWNER}/{REPO}/commits/main'
+    response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
 
