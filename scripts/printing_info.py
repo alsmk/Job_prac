@@ -2,18 +2,22 @@ import requests
 import os
 
 
-repo = "JobPrac"
+REPO = "JobPrac"
 token = os.getenv("TOKEN")
-owner = 'alsmk'
+OWNER = 'alsmk'
 def fetch_commit_info():
     headers = {
         'Authorization': f'token {token}'
     }
-    response = requests.get(f'https://api.github.com/repos/{owner}/{repo}/commits/main', headers=headers)
+    response = requests.get(f'https://api.github.com/repos/{OWNER}/{REPO}/commits/main', 
+                            headers=headers)
     response.raise_for_status()
     return response.json()
 
 
+"""
+This module fetches and prints information from a GitHub repository's  commits.
+"""
 def print_commit_info():
     commit_info = fetch_commit_info()
     for commit in commit_info:
