@@ -17,7 +17,7 @@ def fetch_commit_info():
         'Authorization': f'token {TOKEN}'
     }
     url = f"{API_URL}/repos/{REPO}/commits"
-    print(f'url: {url}')
+    # print(f'url: {url}')
     response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()

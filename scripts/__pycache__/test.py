@@ -3,7 +3,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   
+sys.path.append("D:\JobsPrac\scripts")
 from scripts.printing_info import fetch_commit_info
 
 class TestFetchCommitInfo(unittest.TestCase):   
