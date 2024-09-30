@@ -4,17 +4,20 @@ import requests
 
 
 
-API_URL = "https://api.github.com"
-REPO = os.getenv('GITHUB_REPOSITORY')  
-TOKEN = os.getenv('TOKEN')
+
 
 
 def fetch_commit_info():
     """fetching commits information from github.com"""
+
+    API_URL = "https://api.github.com"
+    REPO = os.getenv('GITHUB_REPOSITORY')  
+    TOKEN = os.getenv('TOKEN')
     headers = {
         'Authorization': f'token {TOKEN}'
     }
     url = f"{API_URL}/repos/{REPO}/commits"
+    # print(f'url: {url}')
     response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()
     return response.json()
